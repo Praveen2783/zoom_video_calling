@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function landing() {
+
   return (
     <div className='landingPageConatiner'> 
       <nav>
@@ -11,9 +12,7 @@ function landing() {
           <h2> <span style={{color:"#FF9839"}}>Doctor</span> Video Call</h2>
         </div>
         <div className='navList'>
-          <Link onClick={()=>{
-            window.location.href = '/1234'
-          }}>Join as Guest</Link>
+          <Link to={"aljk23"}>Join as Guest</Link>
           <Link to={"/auth"}> Register</Link>
           <div role='button'>
           <Link to={"/auth"}>Login </Link>
