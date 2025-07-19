@@ -16,6 +16,7 @@ export const AuthProvider = ({children})=>{
     const authContext = useContext(AuthContext);
 
     const [userData,setUserData] = useState(authContext);
+    const[token,setToken] =useState("");
     const router = useNavigate();
     
     const handleRegister = async (name,username,password)=>{
@@ -43,7 +44,8 @@ export const AuthProvider = ({children})=>{
         });
         if(request.status === httpStatus.OK){
             localStorage.setItem("token",request.data.token);
-            router("/home")
+          
+          router("/")
         }
             
         } catch (error) {
@@ -83,7 +85,7 @@ export const AuthProvider = ({children})=>{
 
     
     const data = {
-        userData,setUserData,handleRegister,handleLogin,getHistoryOfUser,addToUserHistory 
+       token,  userData,setUserData,handleRegister,handleLogin,getHistoryOfUser,addToUserHistory 
     }
     return(
         <AuthContext.Provider value={data}>
